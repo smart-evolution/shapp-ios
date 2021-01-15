@@ -13,6 +13,7 @@
 		33A0C16E25ADB17C0091811E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33A0C16D25ADB17C0091811E /* Preview Assets.xcassets */; };
 		33A0C17925ADB17D0091811E /* smarthomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A0C17825ADB17D0091811E /* smarthomeTests.swift */; };
 		33A0C18425ADB17D0091811E /* smarthomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A0C18325ADB17D0091811E /* smarthomeUITests.swift */; };
+		33F6A7A925AF12AD00B5DBA0 /* LoginUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A7A825AF12AD00B5DBA0 /* LoginUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		33A0C17F25ADB17D0091811E /* smarthomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = smarthomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A0C18325ADB17D0091811E /* smarthomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smarthomeUITests.swift; sourceTree = "<group>"; };
 		33A0C18525ADB17D0091811E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33F6A7A825AF12AD00B5DBA0 /* LoginUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		33A0C16525ADB1770091811E /* smarthome */ = {
 			isa = PBXGroup;
 			children = (
+				33F6A7A825AF12AD00B5DBA0 /* LoginUIView.swift */,
 				33A0C16625ADB1770091811E /* smarthomeApp.swift */,
 				33A0C16825ADB1770091811E /* ContentView.swift */,
 				33A0C16A25ADB17C0091811E /* Assets.xcassets */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F6A7A925AF12AD00B5DBA0 /* LoginUIView.swift in Sources */,
 				33A0C16925ADB1770091811E /* ContentView.swift in Sources */,
 				33A0C16725ADB1770091811E /* smarthomeApp.swift in Sources */,
 			);

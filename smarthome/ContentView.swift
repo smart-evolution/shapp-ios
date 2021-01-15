@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isLogged = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        return Group {
+            if isLogged {
+                VStack(alignment: .leading) {
+                    Text("App View")
+                        .font(.headline)
+                    
+                }
+            } else {
+                LoginUIView(isLogged: $isLogged)
+            }
+        }
     }
 }
 
