@@ -10,10 +10,15 @@ import SwiftUI
 @main
 struct smarthomeApp: App {
     @State var isLogged = false
+    var userUsecases: UserUsecases
     
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+    }
+    
+    init() {
+        self.userUsecases = UserUsecases()
     }
 }

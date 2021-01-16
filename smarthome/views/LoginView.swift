@@ -8,7 +8,7 @@
 import SwiftUI
 import UIKit
 
-struct LoginUIView: View {
+struct LoginView: View {
     @Binding var isLogged: Bool
     @State private var name = ""
     @State private var password = ""
@@ -52,8 +52,8 @@ struct LoginUIView: View {
     }
 }
 
-struct LoginUIView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginUIView(isLogged: .constant(false))
+        LoginView(isLogged: .constant(false))
     }
 }
