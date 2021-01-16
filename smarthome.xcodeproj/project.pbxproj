@@ -20,6 +20,9 @@
 		33F6A7D625B1E96500B5DBA0 /* userUsecases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A7D525B1E96500B5DBA0 /* userUsecases.swift */; };
 		33F6A7E125B205E800B5DBA0 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A7E025B205E800B5DBA0 /* AppView.swift */; };
 		33F6A7E625B206B300B5DBA0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A7E525B206B300B5DBA0 /* ProfileView.swift */; };
+		33F6A7F025B2DB2700B5DBA0 /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A7EF25B2DB2700B5DBA0 /* api.swift */; };
+		33F6A7FD25B2EEAC00B5DBA0 /* services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A7FC25B2EEAC00B5DBA0 /* services.swift */; };
+		33F6A80625B340DE00B5DBA0 /* loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A80525B340DE00B5DBA0 /* loader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		33F6A7D525B1E96500B5DBA0 /* userUsecases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userUsecases.swift; sourceTree = "<group>"; };
 		33F6A7E025B205E800B5DBA0 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		33F6A7E525B206B300B5DBA0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		33F6A7EF25B2DB2700B5DBA0 /* api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
+		33F6A7FC25B2EEAC00B5DBA0 /* services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = services.swift; sourceTree = "<group>"; };
+		33F6A80525B340DE00B5DBA0 /* loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,8 @@
 		33A0C16525ADB1770091811E /* smarthome */ = {
 			isa = PBXGroup;
 			children = (
+				33F6A80425B3405700B5DBA0 /* components */,
+				33F6A7EE25B2DAFA00B5DBA0 /* services */,
 				33F6A7ED25B2174800B5DBA0 /* repositories */,
 				33F6A7CF25B1E91200B5DBA0 /* models */,
 				33F6A7CE25B1E90700B5DBA0 /* usecases */,
@@ -153,6 +161,7 @@
 			children = (
 				33F6A7B625B18A2B00B5DBA0 /* colors.swift */,
 				33F6A7C325B1DAB500B5DBA0 /* sizings.swift */,
+				33F6A7FC25B2EEAC00B5DBA0 /* services.swift */,
 			);
 			path = constants;
 			sourceTree = "<group>";
@@ -189,6 +198,22 @@
 			children = (
 			);
 			path = repositories;
+			sourceTree = "<group>";
+		};
+		33F6A7EE25B2DAFA00B5DBA0 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				33F6A7EF25B2DB2700B5DBA0 /* api.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		33F6A80425B3405700B5DBA0 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				33F6A80525B340DE00B5DBA0 /* loader.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,7 +345,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F6A7F025B2DB2700B5DBA0 /* api.swift in Sources */,
 				33F6A7A925AF12AD00B5DBA0 /* LoginView.swift in Sources */,
+				33F6A80625B340DE00B5DBA0 /* loader.swift in Sources */,
 				33F6A7E625B206B300B5DBA0 /* ProfileView.swift in Sources */,
 				33A0C16925ADB1770091811E /* ContentView.swift in Sources */,
 				33F6A7D125B1E92A00B5DBA0 /* userModel.swift in Sources */,
@@ -328,6 +355,7 @@
 				33F6A7E125B205E800B5DBA0 /* AppView.swift in Sources */,
 				33F6A7D625B1E96500B5DBA0 /* userUsecases.swift in Sources */,
 				33F6A7C425B1DAB500B5DBA0 /* sizings.swift in Sources */,
+				33F6A7FD25B2EEAC00B5DBA0 /* services.swift in Sources */,
 				33F6A7B725B18A2B00B5DBA0 /* colors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,11 +14,12 @@ struct smarthomeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(userUsecases: userUsecases)
         }
     }
     
     init() {
-        self.userUsecases = UserUsecases()
+        let api = Api()
+        self.userUsecases = UserUsecases(api: api)
     }
 }

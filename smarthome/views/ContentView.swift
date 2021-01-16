@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State var isLogged = false
+    @State var isLoading = false
+    var userUsecases: UserUsecases
     
     var body: some View {
         return Group {
@@ -27,7 +29,12 @@ struct ContentView: View {
                         }
                 }
             } else {
-                LoginView(isLogged: $isLogged)
+                ZStack(alignment: .center) {
+                    LoadingView(isShowing: $isLoading) {
+                        LoginView(isLogged: $isLogged, isLoading: $isLoading, userUsecases: self.userUsecases)
+                    }
+                
+                }
             }
         }
     }
@@ -35,6 +42,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(isLogged: false, isLoading: false, userUsecases: UserUsecases(api: Api()))
     }
 }
