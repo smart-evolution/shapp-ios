@@ -13,13 +13,21 @@ struct ContentView: View {
     var body: some View {
         return Group {
             if isLogged {
-                VStack(alignment: .leading) {
-                    Text("App View")
-                        .font(.headline)
+                TabView {
+                    AppView()
+                        .tabItem {
+                            Image(systemName: "list.dash")
+                            Text("Dashboard")
+                        }
                     
+                    ProfileView(isLogged: $isLogged)
+                        .tabItem {
+                            Image(systemName: "person")
+                            Text("Dashboard")
+                        }
                 }
             } else {
-                LoginUIView(isLogged: $isLogged)
+                LoginView(isLogged: $isLogged)
             }
         }
     }
