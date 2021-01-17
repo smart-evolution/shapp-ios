@@ -10,8 +10,10 @@ import UIKit
 
 struct LoginView: View {
     @Binding var isLogged: Bool
+    @Binding var isLoading: Bool
     @State private var name = ""
     @State private var password = ""
+    var userUsecases: UserUsecases
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -34,7 +36,12 @@ struct LoginView: View {
                 .cornerRadius(CSizings.rounding)
             
             Button(action: {
-                self.isLogged = true
+                self.isLoading = true
+                self.userUsecases.login(completion: {
+                    isLogged in
+                    self.isLogged = isLogged
+                    self.isLoading = false
+                })
             }) {
                 Text("Login")
             }.font(.headline)
@@ -54,6 +61,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(isLogged: .constant(false))
+        LoginView(isLogged: .constant(false), isLoading: .constant(false), userUsecases: UserUsecases(api: Api()))
     }
 }
