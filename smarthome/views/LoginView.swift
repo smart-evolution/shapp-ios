@@ -37,11 +37,14 @@ struct LoginView: View {
             
             Button(action: {
                 self.isLoading = true
-                self.userUsecases.login(completion: {
-                    isLogged in
-                    self.isLogged = isLogged
-                    self.isLoading = false
-                })
+                self.userUsecases.login(
+                    username: self.name,
+                    password: self.password,
+                    completion: {
+                        isLogged in
+                        self.isLogged = isLogged
+                        self.isLoading = !isLogged
+                    })
             }) {
                 Text("Login")
             }.font(.headline)
@@ -61,6 +64,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(isLogged: .constant(false), isLoading: .constant(false), userUsecases: UserUsecases(api: Api()))
+        LoginView(isLogged: .constant(false), isLoading: .constant(false), userUsecases: UserUsecases(userRepository: UserRepository(api: Api())))
     }
 }

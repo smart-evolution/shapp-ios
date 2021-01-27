@@ -6,9 +6,9 @@
 //
 
 struct UserUsecases {
-    let api: Api
+    let userRepository: UserRepository
     
-    func login(completion: @escaping (Bool) -> ()) {
-        self.api.get(url: CServices.service, completion: completion)
+    func login(username: String, password: String, completion: @escaping (Bool) -> ()) {
+        self.userRepository.login(username: username, password: password, completion: completion)
     }
 }
