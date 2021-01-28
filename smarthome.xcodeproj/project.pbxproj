@@ -11,6 +11,7 @@
 		335A722B25C1591500DD056D /* agentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A722A25C1591500DD056D /* agentModel.swift */; };
 		335A723025C1CB7D00DD056D /* userRespository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A722F25C1CB7D00DD056D /* userRespository.swift */; };
 		335A723825C1CEDB00DD056D /* agentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A723725C1CEDB00DD056D /* agentRepository.swift */; };
+		335A724F25C29F2500DD056D /* agentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A724E25C29F2500DD056D /* agentList.swift */; };
 		33A0C16725ADB1770091811E /* smarthomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A0C16625ADB1770091811E /* smarthomeApp.swift */; };
 		33A0C16925ADB1770091811E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A0C16825ADB1770091811E /* ContentView.swift */; };
 		33A0C16B25ADB17C0091811E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33A0C16A25ADB17C0091811E /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		335A722A25C1591500DD056D /* agentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = agentModel.swift; sourceTree = "<group>"; };
 		335A722F25C1CB7D00DD056D /* userRespository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userRespository.swift; sourceTree = "<group>"; };
 		335A723725C1CEDB00DD056D /* agentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = agentRepository.swift; sourceTree = "<group>"; };
+		335A724E25C29F2500DD056D /* agentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = agentList.swift; sourceTree = "<group>"; };
 		33A0C16325ADB1770091811E /* smarthome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smarthome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A0C16625ADB1770091811E /* smarthomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smarthomeApp.swift; sourceTree = "<group>"; };
 		33A0C16825ADB1770091811E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				33F6A80525B340DE00B5DBA0 /* loader.swift */,
+				335A724E25C29F2500DD056D /* agentList.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				33F6A80625B340DE00B5DBA0 /* loader.swift in Sources */,
 				33F6A7E625B206B300B5DBA0 /* ProfileView.swift in Sources */,
 				33A0C16925ADB1770091811E /* ContentView.swift in Sources */,
+				335A724F25C29F2500DD056D /* agentList.swift in Sources */,
 				33F6A7D125B1E92A00B5DBA0 /* userModel.swift in Sources */,
 				33A0C16725ADB1770091811E /* smarthomeApp.swift in Sources */,
 				335A722625C158D400DD056D /* agentUsecases.swift in Sources */,

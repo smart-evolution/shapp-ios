@@ -10,20 +10,31 @@ import Foundation
 struct UserSession: Codable {
     var isSession: Bool
 }
+struct Embedded: Codable {
+    var agents: Array<AgentModel>
+}
+struct AgentsResponse: Codable {
+    var _embedded: Embedded
+}
 
 struct Api {
-    func get(url: String, completion: @escaping (Array<String>) -> ()) {
+    func get(url: String, completion: @escaping (Array<AgentModel>) -> ()) {
         let urlTarget = URL(string: url)!
-        var request = URLRequest(url: urlTarget)
+        let request = URLRequest(url: urlTarget)
         
         let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
-            print("agents", data, response, error)
             guard let data = data else {
                 completion([])
                 return
             }
             
-            completion([])
+            do {
+                let agentResponse = try JSONDecoder().decode(AgentsResponse.self, from: data)
+                completion(agentResponse._embedded.agents)
+                return
+            } catch {
+                completion([])
+            }
         }
         
         task.resume()
@@ -44,7 +55,6 @@ struct Api {
             
             do {
                 let userSession = try JSONDecoder().decode(UserSession.self, from: data)
-                print("xxx:isLogged", userSession)
                 completion(userSession.isSession)
                 return
             } catch {

@@ -15,7 +15,7 @@ struct smarthomeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(userUsecases: userUsecases, agentUsecases: agentUsecases, agents: [])
+            ContentView(agents: [], userUsecases: userUsecases, agentUsecases: agentUsecases)
         }
     }
     
