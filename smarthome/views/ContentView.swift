@@ -11,12 +11,14 @@ struct ContentView: View {
     @State var isLogged = false
     @State var isLoading = false
     var userUsecases: UserUsecases
+    var agentUsecases: AgentUsecases
+    var agents: Array<String>
     
     var body: some View {
         return Group {
             if isLogged {
                 TabView {
-                    AppView()
+                    AppView(agentUsecases: self.agentUsecases)
                         .tabItem {
                             Image(systemName: "list.dash")
                             Text("Dashboard")
@@ -25,15 +27,12 @@ struct ContentView: View {
                     ProfileView(isLogged: $isLogged)
                         .tabItem {
                             Image(systemName: "person")
-                            Text("Dashboard")
+                            Text("Profile")
                         }
                 }
             } else {
-                ZStack(alignment: .center) {
-                    LoadingView(isShowing: $isLoading) {
-                        LoginView(isLogged: $isLogged, isLoading: $isLoading, userUsecases: self.userUsecases)
-                    }
-                
+                LoadingView(isShowing: $isLoading) {
+                    LoginView(isLogged: $isLogged, isLoading: $isLoading, userUsecases: self.userUsecases)
                 }
             }
         }
@@ -42,6 +41,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(isLogged: false, isLoading: false, userUsecases: UserUsecases(api: Api()))
+        ContentView(isLogged: false, isLoading: false, userUsecases: UserUsecases(userRepository: UserRepository(api: Api())), agentUsecases: AgentUsecases(agentRepository: AgentRepository(api: Api())), agents: [])
     }
 }

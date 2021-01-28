@@ -11,15 +11,20 @@ import SwiftUI
 struct smarthomeApp: App {
     @State var isLogged = false
     var userUsecases: UserUsecases
+    var agentUsecases: AgentUsecases
     
     var body: some Scene {
         WindowGroup {
-            ContentView(userUsecases: userUsecases)
+            ContentView(userUsecases: userUsecases, agentUsecases: agentUsecases, agents: [])
         }
     }
     
     init() {
         let api = Api()
-        self.userUsecases = UserUsecases(api: api)
+        let userRepository = UserRepository(api: api)
+        self.userUsecases = UserUsecases(userRepository: userRepository)
+        
+        let agentRepository = AgentRepository(api: api)
+        self.agentUsecases = AgentUsecases(agentRepository: agentRepository)
     }
 }

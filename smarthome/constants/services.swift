@@ -6,5 +6,5 @@
 //
 
 struct CServices {
-    static let service = "http://myservice.com/api"
+    static let service = "http://93.180.188.173:3222"
 }

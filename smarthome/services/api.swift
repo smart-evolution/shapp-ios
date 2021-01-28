@@ -7,18 +7,51 @@
 
 import Foundation
 
-struct Api {
-    func get(url: String, completion: @escaping (Bool) -> ()) {
-        let urlTarget = URL(string: url)!
+struct UserSession: Codable {
+    var isSession: Bool
+}
 
-        let task = URLSession.shared.dataTask(with: urlTarget) {(data, response, error) in
+struct Api {
+    func get(url: String, completion: @escaping (Array<String>) -> ()) {
+        let urlTarget = URL(string: url)!
+        var request = URLRequest(url: urlTarget)
+        
+        let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
+            print("agents", data, response, error)
             guard let data = data else {
-                completion(true)
+                completion([])
                 return
             }
-            completion(true)
+            
+            completion([])
         }
-
+        
+        task.resume()
+    }
+    
+    func post(url: String, body: String, completion: @escaping (Bool) -> ()) {
+        let urlTarget = URL(string: url)!
+        
+        var request = URLRequest(url: urlTarget)
+        request.httpMethod = "POST"
+        request.httpBody = body.data(using: .utf8)
+        
+        let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
+            guard let data = data else {
+                completion(false)
+                return
+            }
+            
+            do {
+                let userSession = try JSONDecoder().decode(UserSession.self, from: data)
+                print("xxx:isLogged", userSession)
+                completion(userSession.isSession)
+                return
+            } catch {
+                completion(false)
+            }
+        }
+        
         task.resume()
     }
 }
