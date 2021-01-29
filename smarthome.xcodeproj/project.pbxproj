@@ -12,6 +12,7 @@
 		335A723025C1CB7D00DD056D /* userRespository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A722F25C1CB7D00DD056D /* userRespository.swift */; };
 		335A723825C1CEDB00DD056D /* agentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A723725C1CEDB00DD056D /* agentRepository.swift */; };
 		335A724F25C29F2500DD056D /* agentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A724E25C29F2500DD056D /* agentList.swift */; };
+		335A725A25C3EE1200DD056D /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 335A725925C3EE1200DD056D /* Makefile */; };
 		33A0C16725ADB1770091811E /* smarthomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A0C16625ADB1770091811E /* smarthomeApp.swift */; };
 		33A0C16925ADB1770091811E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A0C16825ADB1770091811E /* ContentView.swift */; };
 		33A0C16B25ADB17C0091811E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33A0C16A25ADB17C0091811E /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		335A722F25C1CB7D00DD056D /* userRespository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userRespository.swift; sourceTree = "<group>"; };
 		335A723725C1CEDB00DD056D /* agentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = agentRepository.swift; sourceTree = "<group>"; };
 		335A724E25C29F2500DD056D /* agentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = agentList.swift; sourceTree = "<group>"; };
+		335A725925C3EE1200DD056D /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		33A0C16325ADB1770091811E /* smarthome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smarthome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A0C16625ADB1770091811E /* smarthomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smarthomeApp.swift; sourceTree = "<group>"; };
 		33A0C16825ADB1770091811E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		33A0C15A25ADB1760091811E = {
 			isa = PBXGroup;
 			children = (
+				335A725925C3EE1200DD056D /* Makefile */,
 				33A0C16525ADB1770091811E /* smarthome */,
 				33A0C17725ADB17D0091811E /* smarthomeTests */,
 				33A0C18225ADB17D0091811E /* smarthomeUITests */,
@@ -360,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				335A725A25C3EE1200DD056D /* Makefile in Sources */,
 				33F6A7F025B2DB2700B5DBA0 /* api.swift in Sources */,
 				33F6A7A925AF12AD00B5DBA0 /* LoginView.swift in Sources */,
 				335A723025C1CB7D00DD056D /* userRespository.swift in Sources */,
