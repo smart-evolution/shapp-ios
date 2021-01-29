@@ -8,7 +8,7 @@
 struct AgentRepository {
     let api: Api
     
-    func fetchAgents(completion: @escaping (Array<String>) -> ()) {
+    func fetchAgents(completion: @escaping (Array<AgentModel>) -> ()) {
         self.api.get(url: CServices.service + "/api/agents?period=30",
                       completion: completion)
     }

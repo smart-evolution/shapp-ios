@@ -7,19 +7,37 @@
 
 import SwiftUI
 
-struct AppView: View {    
+struct AppView: View {
+    var agentUsecases: AgentUsecases
+    @Binding var agents: Array<AgentModel>
+    
     var body: some View {
         TabView {
             VStack(alignment: .leading) {
-                Text("App view")
-                    .font(.headline)
+                List(agents, id:\.self.id) { agent in
+                    Text(agent.name)
+                }
             }
         }
+    }
+    
+    init(agentUsecases: AgentUsecases, agents: Binding<Array<AgentModel>>) {
+        self._agents = agents
+        self.agentUsecases = agentUsecases
+        self.fetchAgents()
+    }
+    
+    func fetchAgents () {
+        self.agentUsecases.getAllAgents(completion: { agents in
+            self.agents = agents
+        })
     }
 }
 
 struct AppView_Previews: PreviewProvider {
+    @State(initialValue: []) static var agents: Array<AgentModel>
+    
     static var previews: some View {
-        AppView()
+        AppView(agentUsecases: AgentUsecases(agentRepository: AgentRepository(api: Api())), agents: $agents)
     }
 }
