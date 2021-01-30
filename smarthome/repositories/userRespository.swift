@@ -8,8 +8,8 @@
 struct UserRepository {
     let api: Api
     
-    func login(username: String, password: String, completion: @escaping (Bool) -> ()) {
-        self.api.post(url: CServices.service + "/api/login",
+    func login(username: String, apiAddress: String, password: String, completion: @escaping (Bool) -> ()) {
+        self.api.post(url: "\(apiAddress)/api/login",
                       body: "username=\(username)&password=\(password)",
                       completion: completion)
     }

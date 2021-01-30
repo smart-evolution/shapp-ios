@@ -13,6 +13,7 @@ struct LoginView: View {
     @Binding var isLoading: Bool
     @State private var name = ""
     @State private var password = ""
+    @EnvironmentObject var settings: UserSettings
     var userUsecases: UserUsecases
     
     var body: some View {
@@ -30,6 +31,11 @@ struct LoginView: View {
                 .background(Color.white)
                 .cornerRadius(CSizings.rounding)
             
+            TextField("API", text: $settings.apiAddress)
+                .padding()
+                .background(Color.white)
+                .cornerRadius(CSizings.rounding)
+            
             SecureField("Password", text: $password)
                 .padding()
                 .background(Color.white)
@@ -39,6 +45,7 @@ struct LoginView: View {
                 self.isLoading = true
                 self.userUsecases.login(
                     username: self.name,
+                    apiAddress: settings.apiAddress,
                     password: self.password,
                     completion: {
                         isLogged in

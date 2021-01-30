@@ -13,6 +13,7 @@ struct ContentView: View {
     @State var agents: Array<AgentModel>
     var userUsecases: UserUsecases
     var agentUsecases: AgentUsecases
+    var settings = UserSettings()
     
     var body: some View {
         if isLogged {
@@ -28,10 +29,10 @@ struct ContentView: View {
                         Image(systemName: "person")
                         Text("Profile")
                     }
-            }
+            }.environmentObject(settings)
         } else {
             LoadingView(isShowing: $isLoading) {
-                LoginView(isLogged: $isLogged, isLoading: $isLoading, userUsecases: self.userUsecases)
+                LoginView(isLogged: $isLogged, isLoading: $isLoading, userUsecases: self.userUsecases).environmentObject(settings)
             }
         }
     }
