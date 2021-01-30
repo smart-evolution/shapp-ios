@@ -15,7 +15,6 @@ struct ContentView: View {
     var agentUsecases: AgentUsecases
     
     var body: some View {
-        return Group {
             if isLogged {
                 TabView {
                     AppView(agentUsecases: self.agentUsecases, agents: $agents)
@@ -35,7 +34,6 @@ struct ContentView: View {
                     LoginView(isLogged: $isLogged, isLoading: $isLoading, userUsecases: self.userUsecases)
                 }
             }
-        }
     }
 }
 
