@@ -15,25 +15,25 @@ struct ContentView: View {
     var agentUsecases: AgentUsecases
     
     var body: some View {
-            if isLogged {
-                TabView {
-                    AppView(agentUsecases: self.agentUsecases, agents: $agents)
-                        .tabItem {
-                            Image(systemName: "list.dash")
-                            Text("Dashboard")
-                        }
-                    
-                    ProfileView(isLogged: $isLogged)
-                        .tabItem {
-                            Image(systemName: "person")
-                            Text("Profile")
-                        }
-                }
-            } else {
-                LoadingView(isShowing: $isLoading) {
-                    LoginView(isLogged: $isLogged, isLoading: $isLoading, userUsecases: self.userUsecases)
-                }
+        if isLogged {
+            TabView {
+                AppView(agentUsecases: self.agentUsecases, agents: $agents)
+                    .tabItem {
+                        Image(systemName: "list.dash")
+                        Text("Dashboard")
+                    }
+                
+                ProfileView(isLogged: $isLogged)
+                    .tabItem {
+                        Image(systemName: "person")
+                        Text("Profile")
+                    }
             }
+        } else {
+            LoadingView(isShowing: $isLoading) {
+                LoginView(isLogged: $isLogged, isLoading: $isLoading, userUsecases: self.userUsecases)
+            }
+        }
     }
 }
 

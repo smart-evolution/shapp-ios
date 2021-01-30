@@ -25,8 +25,4 @@ help:
 	@echo  '                    be passed as `V` argument with ex. `v0.0.0`'
 	@echo  '                    format'
 	@echo  ''
-
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
-	<key>CFBundleVersion</key>
-	<string>1</string>
+	
