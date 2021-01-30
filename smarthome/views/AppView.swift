@@ -18,13 +18,9 @@ struct AppView: View {
                     Text(agent.name)
                 }
             }
+        }.onAppear {
+            self.fetchAgents()
         }
-    }
-    
-    init(agentUsecases: AgentUsecases, agents: Binding<Array<AgentModel>>) {
-        self._agents = agents
-        self.agentUsecases = agentUsecases
-        self.fetchAgents()
     }
     
     func fetchAgents () {
