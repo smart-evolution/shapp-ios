@@ -10,6 +10,7 @@ import SwiftUI
 struct AppView: View {
     var agentUsecases: AgentUsecases
     @Binding var agents: Array<AgentModel>
+    @EnvironmentObject var settings: UserSettings
     
     var body: some View {
         TabView {
@@ -18,17 +19,13 @@ struct AppView: View {
                     Text(agent.name)
                 }
             }
+        }.onAppear {
+            self.fetchAgents(apiAddress: settings.apiAddress)
         }
     }
     
-    init(agentUsecases: AgentUsecases, agents: Binding<Array<AgentModel>>) {
-        self._agents = agents
-        self.agentUsecases = agentUsecases
-        self.fetchAgents()
-    }
-    
-    func fetchAgents () {
-        self.agentUsecases.getAllAgents(completion: { agents in
+    func fetchAgents (apiAddress: String) {
+        self.agentUsecases.getAllAgents(apiAddress: apiAddress, completion: { agents in
             self.agents = agents
         })
     }

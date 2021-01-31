@@ -19,8 +19,4 @@ struct AgentList: View {
             }
         }
     }
-    
-    init() {
-        self.agents = ["agent-1", "agent-2"]
-    }
 }

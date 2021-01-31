@@ -5,8 +5,8 @@ version:
 	git tag $(V)
 	./scripts/changelog.sh
 	git add ./docs/changelogs/CHANGELOG_$(V).md
-	sed -i '' '/CFBundleShortVersionString/{n;s/.*/\t<key>$(V)<\/key>/;}' ./smarthome/Info.plist
-	sed -i '' '/CFBundleVersion/{n;s/.*/\t<key>$(V)<\/key>/;}' ./smarthome/Info.plist
+	sed -i '' '/CFBundleShortVersionString/{n;s/.*/\t<string>$(V)<\/string>/;}' ./smarthome/Info.plist
+	sed -i '' '/CFBundleVersion/{n;s/.*/\t<string>$(V)<\/string>/;}' ./smarthome/Info.plist
 	git add ./smarthome/Info.plist
 	git commit --allow-empty -m "Build $(V)"
 	git tag --delete $(V)
@@ -25,8 +25,4 @@ help:
 	@echo  '                    be passed as `V` argument with ex. `v0.0.0`'
 	@echo  '                    format'
 	@echo  ''
-
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
-	<key>CFBundleVersion</key>
-	<string>1</string>
+	

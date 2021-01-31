@@ -13,27 +13,26 @@ struct ContentView: View {
     @State var agents: Array<AgentModel>
     var userUsecases: UserUsecases
     var agentUsecases: AgentUsecases
+    var settings = UserSettings()
     
     var body: some View {
-        return Group {
-            if isLogged {
-                TabView {
-                    AppView(agentUsecases: self.agentUsecases, agents: $agents)
-                        .tabItem {
-                            Image(systemName: "list.dash")
-                            Text("Dashboard")
-                        }
-                    
-                    ProfileView(isLogged: $isLogged)
-                        .tabItem {
-                            Image(systemName: "person")
-                            Text("Profile")
-                        }
-                }
-            } else {
-                LoadingView(isShowing: $isLoading) {
-                    LoginView(isLogged: $isLogged, isLoading: $isLoading, userUsecases: self.userUsecases)
-                }
+        if isLogged {
+            TabView {
+                AppView(agentUsecases: self.agentUsecases, agents: $agents)
+                    .tabItem {
+                        Image(systemName: "list.dash")
+                        Text("Dashboard")
+                    }
+                
+                ProfileView(isLogged: $isLogged)
+                    .tabItem {
+                        Image(systemName: "person")
+                        Text("Profile")
+                    }
+            }.environmentObject(settings)
+        } else {
+            LoadingView(isShowing: $isLoading) {
+                LoginView(isLogged: $isLogged, isLoading: $isLoading, userUsecases: self.userUsecases).environmentObject(settings)
             }
         }
     }

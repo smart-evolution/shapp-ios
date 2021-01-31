@@ -8,7 +8,7 @@
 struct AgentUsecases {
     let agentRepository: AgentRepository
     
-    func getAllAgents(completion: @escaping (Array<AgentModel>) -> ()) {
-        self.agentRepository.fetchAgents(completion: completion)
+    func getAllAgents(apiAddress: String, completion: @escaping (Array<AgentModel>) -> ()) {
+        self.agentRepository.fetchAgents(apiAddress: apiAddress, completion: completion)
     }
 }

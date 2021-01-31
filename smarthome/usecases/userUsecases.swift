@@ -8,7 +8,7 @@
 struct UserUsecases {
     let userRepository: UserRepository
     
-    func login(username: String, password: String, completion: @escaping (Bool) -> ()) {
-        self.userRepository.login(username: username, password: password, completion: completion)
+    func login(username: String, apiAddress: String, password: String, completion: @escaping (Bool) -> ()) {
+        self.userRepository.login(username: username, apiAddress: apiAddress, password: password, completion: completion)
     }
 }
