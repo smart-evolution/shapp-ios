@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		335A722625C158D400DD056D /* agentUsecases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A722525C158D400DD056D /* agentUsecases.swift */; };
 		335A722B25C1591500DD056D /* agentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A722A25C1591500DD056D /* agentModel.swift */; };
-		335A723025C1CB7D00DD056D /* userRespository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A722F25C1CB7D00DD056D /* userRespository.swift */; };
+		335A723025C1CB7D00DD056D /* userRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A722F25C1CB7D00DD056D /* userRepository.swift */; };
 		335A723825C1CEDB00DD056D /* agentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A723725C1CEDB00DD056D /* agentRepository.swift */; };
 		335A725A25C3EE1200DD056D /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 335A725925C3EE1200DD056D /* Makefile */; };
 		335A727325C5808B00DD056D /* userSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A727225C5808B00DD056D /* userSettings.swift */; };
@@ -50,7 +50,7 @@
 /* Begin PBXFileReference section */
 		335A722525C158D400DD056D /* agentUsecases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = agentUsecases.swift; sourceTree = "<group>"; };
 		335A722A25C1591500DD056D /* agentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = agentModel.swift; sourceTree = "<group>"; };
-		335A722F25C1CB7D00DD056D /* userRespository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userRespository.swift; sourceTree = "<group>"; };
+		335A722F25C1CB7D00DD056D /* userRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userRepository.swift; sourceTree = "<group>"; };
 		335A723725C1CEDB00DD056D /* agentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = agentRepository.swift; sourceTree = "<group>"; };
 		335A725925C3EE1200DD056D /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		335A727225C5808B00DD056D /* userSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userSettings.swift; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 		33F6A7ED25B2174800B5DBA0 /* repositories */ = {
 			isa = PBXGroup;
 			children = (
-				335A722F25C1CB7D00DD056D /* userRespository.swift */,
+				335A722F25C1CB7D00DD056D /* userRepository.swift */,
 				335A723725C1CEDB00DD056D /* agentRepository.swift */,
 			);
 			path = repositories;
@@ -372,7 +372,7 @@
 				335A727325C5808B00DD056D /* userSettings.swift in Sources */,
 				33F6A7F025B2DB2700B5DBA0 /* api.swift in Sources */,
 				33F6A7A925AF12AD00B5DBA0 /* LoginView.swift in Sources */,
-				335A723025C1CB7D00DD056D /* userRespository.swift in Sources */,
+				335A723025C1CB7D00DD056D /* userRepository.swift in Sources */,
 				33F6A80625B340DE00B5DBA0 /* loader.swift in Sources */,
 				33F6A7E625B206B300B5DBA0 /* ProfileView.swift in Sources */,
 				33A0C16925ADB1770091811E /* ContentView.swift in Sources */,

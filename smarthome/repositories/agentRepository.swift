@@ -9,7 +9,9 @@ struct AgentRepository {
     let api: Api
     
     func fetchAgents(apiAddress: String, completion: @escaping (Array<AgentModel>) -> ()) {
-        self.api.get(url: "\(apiAddress)/api/agents?period=30",
-                     completion: completion)
+        self.api.get(url: "\(apiAddress)/api/agents?period=30", type: AgentsResponse.self,
+                     completion: { (data: AgentsResponse?) in
+                        completion(data?._embedded.agents ?? [])
+                     })
     }
 }

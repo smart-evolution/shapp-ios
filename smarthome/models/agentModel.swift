@@ -11,3 +11,9 @@ struct AgentModel: Codable {
     var type: String
 }
 
+struct AgentsEmbedded: Codable {
+    var agents: Array<AgentModel>
+}
+struct AgentsResponse: Codable {
+    var _embedded: AgentsEmbedded
+}
